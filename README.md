@@ -1,7 +1,13 @@
 # I2C-Bus-extender
 extend the range of I2C connections by modulating with an active driver, allows for 200m distance
 
-Principally I like the I2C bus, and it is very widely used to talk between components on a pcb level. But higher capacitance and inducted RF puts the little guy at risk to loose data. So I put some effort in understanding the limits, and it came clear that there is a significant improvement inside a comparetment if you increase the current on the bus by having proper pull up resistors. 4k7 is the default for 5V bus. on 3v3 bus better 2k2. i1k seems the maximum the usual semis can drive to zero. But the shape when looked on the oscillopscope is greatly improved.
+Principally I like the I2C bus, and it is very widely used to talk between components on a pcb level. But higher capacitance and inducted RF puts the little guy at risk to loose data. So I put some effort in understanding the limits, and it came clear that there is a significant improvement inside a compartment if you increase the current on the bus by having proper pull up resistors. 4k7 is the default for 5V bus. on 3v3 bus better 2k2. i1k seems the maximum the usual semis can drive to zero. But the shape when looked on the oscilloscope is greatly improved.
+
+###### This is only a small part of my overall PA500 project
+
+[Link to full project diary](https://bit.ly/30hMFdh)
+
+You might be elevated to watch more pcb-porn - see the [LPF filter section](https://bit.ly/3dGUY66) there
 
 ## Leaving the box
 
@@ -15,7 +21,7 @@ The solution came from TI having a bus driver developed exactly for the purpose
 
 ![](pics/appnote.png)
 
-It allows us to simply inject 12V on either side of the comm (anything between 3-15V works), and get a very robust signal to go far away and be stable. Also each 3v3 bus of both participants remain integer and unaffected by each other electrically. I didnt go that far to make it galvanic seperated, as my test shows really robust behaviour with its simplest implementation.
+It allows us to simply inject 12V on either side of the comm (anything between 3-15V works), and get a very robust signal to go far away and be stable. Also each 3v3 bus of both participants remain integer and unaffected by each other electrically. I didn't go that far to make it galvanic separated, as my test shows really robust behaviour with its simplest implementation.
 
 It even cooler, either side of the I2C can be 3v3 or 5V Level. The chip will do what you connect to the "3v3" labelled pins on either side if you have a 5V bus just insert your 5V level. it will work reliably
 
@@ -33,7 +39,7 @@ original use case was to connect the Hermes-Lite 2 to my homebrew PA500. But I u
 | -------------------------------------------------------- | ------------------------------------------------------------ |
 | ![](pics/20200627_010345.jpg)                            | Top side the D-Sub Jumpers, right side EXTTR,SDA2,SCL2,3v3,AIN1,AIN2,GND this order matches a twisted ribbon connector to the extension jumper header as of here: [HL2 Extension Jumper](https://github.com/pressla/HL2_Extension_Jumper) The bottom provides injection of the external driver voltage. anything between 3-15V is fine. to make sense, above 10V would be useful. in HL2 this pins match the second extension connectors pins for another ribbon connector. Jumper 1 Pin1 enables that Voltage to be used. technically we provide that 12V on either side of the extender and bridge it with this jumper to the other side. This means in HL2 case I will inject the power from the PA through this connection back to power the HL2. This way I dont need a seperate power supply for the HL2. But the other way is just as good. GND is identical for all Busses. |
 | <img src="pics/pcb comments.png" style="zoom:150%;" />   | The gerber view shows the schema also well                   |
-| ![](pics/design3D.png)                                   | The design 3D looks very close to the reality, I am really impressed of the workflow with this toolchain. I  was never good with the iron, now this tool is working very well for me. It just allows me to create really working pcbs in a few days, also mechnically excellent results. And the production quality is beyond imagination. This little board is not a challenge, but my LPF board was and that one is outstanding.  Here is more [PCB-porn](https://bit.ly/3dGUY66) |
+| ![](pics/design3D.png)                                   | The design 3D looks very close to the reality, I am really impressed of the workflow with this toolchain. I  was never good with the iron, now this tool is working very well for me. It just allows me to create really working pcbs in a few days, also mechnically excellent results. And the production quality is beyond imagination. |
 
 ### Performance Tests
 
