@@ -33,7 +33,7 @@ original use case was to connect the Hermes-Lite 2 to my homebrew PA500. But I u
 | -------------------------------------------------------- | ------------------------------------------------------------ |
 | ![](pics/20200627_010345.jpg)                            | Top side the D-Sub Jumpers, right side EXTTR,SDA2,SCL2,3v3,AIN1,AIN2,GND this order matches a twisted ribbon connector to the extension jumper header as of here: [HL2 Extension Jumper](https://github.com/pressla/HL2_Extension_Jumper) The bottom provides injection of the external driver voltage. anything between 3-15V is fine. to make sense, above 10V would be useful. in HL2 this pins match the second extension connectors pins for another ribbon connector. Jumper 1 Pin1 enables that Voltage to be used. technically we provide that 12V on either side of the extender and bridge it with this jumper to the other side. This means in HL2 case I will inject the power from the PA through this connection back to power the HL2. This way I dont need a seperate power supply for the HL2. But the other way is just as good. GND is identical for all Busses. |
 | <img src="pics/pcb comments.png" style="zoom:150%;" />   | The gerber view shows the schema also well                   |
-| ![](pics/design3D.png)                                   | The design 3D looks very close to the reality, I am really impressed of the workflow with this toolchain. I  was never good with iron, now this tool is working very well for me. It just allows me to create working pcb, also mechnically excellent results. And the production quality is beyond imagination. This little board is not a challenge, but my LPF board was and that one is outstanding.  Here is more [PCB-porn](https://bit.ly/3dGUY66) |
+| ![](pics/design3D.png)                                   | The design 3D looks very close to the reality, I am really impressed of the workflow with this toolchain. I  was never good with the iron, now this tool is working very well for me. It just allows me to create really working pcbs in a few days, also mechnically excellent results. And the production quality is beyond imagination. This little board is not a challenge, but my LPF board was and that one is outstanding.  Here is more [PCB-porn](https://bit.ly/3dGUY66) |
 
 ### Performance Tests
 
@@ -125,7 +125,7 @@ The filter board. MCP23008+ULN2003 on 0x20 just the same than the standard HL2 f
 
 # [Video of final test](https://www.youtube.com/watch?v=5C07nNBeCo4)
 
-
+I switched between 1.8 and 3.8 Mhz on the SDR console
 
 ### How do I make some for myself?
 
