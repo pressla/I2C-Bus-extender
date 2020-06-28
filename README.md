@@ -107,6 +107,8 @@ Here is sender side and receiver side. sure the receiver side is re-generated an
 
 You may have noticed I did a variation of pull ups 1k,4,7k to see the current and signal resilience on the PA side. Here is a 4k7 signal. It became vulnerable with very high RF next to the cirquit. Above 2.2kOhm was significant more resilient. 
 
+
+
 ![](pics/pullup 4k7-nogood.png)
 
 ### Tests with HL2
