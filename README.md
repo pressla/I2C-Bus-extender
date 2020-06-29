@@ -109,7 +109,7 @@ You may have noticed I did a variation of pull ups 1k,4,7k to see the current an
 
 
 
-![](pics/pullup 4k7-nogood.png)
+![](pics/pullup-4k7-nogood.png)
 
 ### Tests with HL2
 
